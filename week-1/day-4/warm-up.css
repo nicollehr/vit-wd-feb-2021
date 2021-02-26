@@ -1,0 +1,14 @@
+h1 {
+    text-transform: lowercase;
+}
+h2 {
+    text-align: right;
+    font-family: oi, cursive
+}
+h3 {
+    font-size: 58px
+    color: blue;
+}
+h4 {
+    text-shadow: 0ex;
+}
