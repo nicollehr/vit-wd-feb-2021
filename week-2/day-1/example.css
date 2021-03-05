@@ -1,0 +1,25 @@
+body{
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+}
+
+#container {
+    width: 100%;
+    height 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    background-color: hotpink
+    height: 50px;
+    width: 30px;
+    border: solid green 5px;
+    /* float: left; */
+    margin: 10px;
+}
+
+#puppy {
+    width: 50%height: 50%;
+}
