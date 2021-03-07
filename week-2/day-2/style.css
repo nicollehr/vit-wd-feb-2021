@@ -1,5 +1,5 @@
 img {
-    width: 500px;
+    min-width: 500px;
     height: 300px;
 }
 
@@ -14,7 +14,7 @@ img {
 #imgSlider {
     display: flex;
     animation-name: carousel;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
  
 }
@@ -23,6 +23,6 @@ img {
         transform: translateX(0px);
     }
     to {
-        transform: translateX(-500px);
+        transform: translateX(-2500px);
     }
 }
