@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <link rel="stylesheet" href="./assignment.css" />
+
+</head>
+
+<body>
+    <h2 class="header">Favorite Beaches</h2>
+    <div id="window">
+        <div id="imgSlider">
+            <img src="https://www.planetware.com/wpimages/2019/08/best-beaches-in-the-world-shipwreck-beach-zakynthos-greece.jpg"
+                alt="" />
+            <img src="https://i1.wp.com/www.therepublicofrose.com/wp-content/uploads/2016/04/IMG_4125-1024x683.jpg?resize=1024%2C683"
+                alt="" />
+            <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iOlc0tihVN60/v1/1000x-1.jpg" alt="" />
+            <img src="https://welcome.topuertorico.org/img/gi-flamenco-beach-culebra.png" alt="" />
+            <img src="https://miro.medium.com/max/2160/1*qbZ4Q16Z-0fs9tJsjsxsrQ.jpeg" alt="" />
+            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F09%2F09%2Fcabo-san-lucas-mexico-arch-CABONOW0920.jpg"
+                alt="">
+            <img src="https://www.planetware.com/wpimages/2019/08/best-beaches-in-the-world-shipwreck-beach-zakynthos-greece.jpg"
+                alt="">
+        </div>
+    </div>
+    <h2 class="header">Beach Houses</h2>
+    <div id="window">
+        <div class="window">
+            <ul id="slides">
+                <li class="slide showing"></li>
+                <li class="slide"></li>
+                <li class="slide"></li>
+                <li class="slide"></li>
+                <li class="slide"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <button class="controls" id="previous">&lt;</button>
+
+        <button class="controls" id="pause">&#10074;&#10074;</button>
+
+        <button class="controls" id="next">&gt;</button>
+    </div>
+    <script>
+        var controls =
+            document.querySelectorAll('.controls');
+        for (var i = 0; i < controls.length; i++) {
+            controls[i].style.display = 'inline-block';
+        }
+
+        var slides = document.querySelectorAll('#slides .slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide, 2000);
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function goToSlide(n) {
+            slides[currentSlide].className = 'slide';
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].className = 'slide showing';
+        }
+
+
+        var playing = true;
+        var pauseButton = document.getElementById('pause');
+
+        function pauseSlideshow() {
+            pauseButton.innerHTML = '&#9658;'; // play character
+            playing = false;
+            clearInterval(slideInterval);
+        }
+
+        function playSlideshow() {
+            pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
+            playing = true;
+            slideInterval = setInterval(nextSlide, 2000);
+        }
+
+        pauseButton.onclick = function () {
+            if (playing) { pauseSlideshow(); }
+            else { playSlideshow(); }
+        };
+
+        var next = document.getElementById('next');
+        var previous = document.getElementById('previous');
+
+        next.onclick = function () {
+            pauseSlideshow();
+            nextSlide();
+        };
+        previous.onclick = function () {
+            pauseSlideshow();
+            previousSlide();
+        };
+    </script>
+
+</body>
+
+</html>

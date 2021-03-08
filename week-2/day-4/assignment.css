@@ -1,0 +1,131 @@
+img {
+    min-width: 500px;
+    height: 300px;
+}
+
+#window {
+    width: 500px;
+    height: 300px;
+    border: solid 5px rgb(0, 102, 128)0, 223, 250);
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+#imgSlider {
+    display: flex;
+    animation-name: carousel;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+ 
+}
+@keyframes carousel {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(-2500px);
+    }
+}
+
+h2.header {
+    text-align: center;
+  }
+
+#slides{
+	position: relative;
+	height: 300px;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+
+.slide{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 1;
+
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+}
+
+.showing{
+	opacity: 1;
+	z-index: 2;
+}
+
+
+.controls{
+	display: none;
+}
+
+
+.slide{
+	font-size: 40px;
+	padding: 40px;
+	box-sizing: border-box;
+	background: #333;
+	color: #fff;
+  
+  background-size: cover;
+}
+
+.slide:nth-of-type(1){
+  background-image: url('https://blog1.fkimg.com/wp-content/uploads/2017/03/San-Diego-California-Friends-Summer-Beach-House.jpg');
+}
+
+.slide:nth-of-type(2){
+  background-image: url('https://cdn.liverez.com/5/11200/1/53168/550/1.jpg')
+}
+
+.slide:nth-of-type(3){
+  background-image: url('https://odis.homeaway.com/odis/homepage/19d2db40-e0b7-43e6-a3f0-0cf05b1e0e81.hw8.jpg');
+}
+.slide:nth-of-type(4){
+  background-image: url('https://beach-houserentals.com/wp-content/uploads/2016/06/Capitola6.png');
+}
+
+
+.slide:nth-of-type(5){
+  background-image: url('https://d4qwptktddc5f.cloudfront.net/maxnunezarquitectos-residential-forecourt-homes-large.jpg');
+}
+
+
+.controls{
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 20px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  margin: 30px 30px 30px 50px;
+  width: 100px;
+}
+
+.controls:hover,
+.controls:focus{
+  background: #eee;
+  color: #333;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: auto;
+}
+
+
+
+
+/*  position: absolute;
+  left: 515px;
+  top: 720px;
+  z-index: 10;
+  font-size: 0px; /*
