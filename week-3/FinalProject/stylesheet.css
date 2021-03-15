@@ -1,0 +1,30 @@
+body {
+    background-image: url('../FinalProject/img/BACK.jpg');
+    width: 1200px;
+    height:1100px;
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align:center;
+    margin:auto;
+    padding:0;
+ }
+
+ #container {
+    display: flex;
+    justify-content: space-between;
+}
+th {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 150%
+}
+  
+td {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-family: "Times New Roman", Times, serif;
+        font-size: 150%
+
+}
