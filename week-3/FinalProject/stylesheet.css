@@ -1,7 +1,7 @@
 body {
     background-image: url('../FinalProject/img/BACK.jpg');
     width: 1200px;
-    height:1100px;
+    height:1500px;
     background-size: cover; 
     background-position: center center;
     background-repeat: no-repeat;
@@ -13,6 +13,7 @@ body {
  #container {
     display: flex;
     justify-content: space-between;
+    direction: row;
 }
 th {
         font-family: "Times New Roman", Times, serif;
@@ -28,3 +29,6 @@ p{
         font-size: 150%
 
 }
+
+      
+  

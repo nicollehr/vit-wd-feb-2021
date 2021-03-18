@@ -39,3 +39,58 @@ function randomize() {
   var myRandomNumbers = "rgb(" + x + "," + y + "," + z + ")";
   document.body.style.background = myRandomNumbers;
 }
+
+<input type="button" class="indented" value="Switch to Advanced Mode" onclick="javascript:window.location.href='https://www.random.org/lists/?mode=advanced';">
+
+
+
+
+
+
+
+  function showload(form) {
+    document.getElementById("modalonsubmit").style.display = "block";
+  document.getElementById("submitNew").value = "Loading...";
+var textArea = document.getElementById("id_text");
+var s = textArea.value.split("\n");
+var x = document.getElementById('randomitem');
+
+var i = 0;
+var itime = 200;
+if (s.length < 2){
+    form.submit();
+  return false;
+}
+(function loop() {
+    console.log(i);
+    x.innerHTML = s[i];
+    if (++i < s.length) {
+    setTimeout(loop, 200);
+        if (i == s.length-1)
+        {
+    i = 0;
+        }
+    }
+})();
+  setTimeout(function() {
+    if(typeof(Storage) !== "undefined"){localStorage.setItem("randomitempicker", document.getElementById("id_text").value)}
+
+        form.submit();
+    }, 3000);  // 3 seconds
+
+    return false;
+}
+
+
+
+function readfileFunction(){
+  var file = document.getElementById("myFile").files[0];
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    var textArea = document.getElementById("id_text");
+    textArea.value = e.target.result;
+};
+reader.readAsText(file);
+if(typeof(Storage) !== "undefined"){localStorage.setItem("randomitempicker", document.getElementById("id_text").value)}
+}
+
